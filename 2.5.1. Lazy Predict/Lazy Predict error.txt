@@ -1,0 +1,36 @@
+from lazypredict.Supervised import LazyClassifier
+ile aşağıdaki hata alınırsa
+OneHotEncoder.__init__() got an unexpected keyword argument 'sparse'
+
+1. LazyPredict Kurulum Klasörünü Bulma
+
+Öncelikle, LazyPredict'in yüklü olduğu klasörü bulmamız gerekiyor. Bu klasör Python'un yüklü olduğu dizinde yer alır. 
+
+Python Kütüphane Yolu Bulma
+
+1. Anaconda Prompt açın ve path bulun;
+   
+   python -c "import lazypredict; print(lazypredict.__file__)"
+   
+   Bu komut ile LazyPredict paketinin `Supervised.py` dosyasının yer aldığı dizini size gösterecektir. Çıktı genellikle şu formda olacaktır: `C:\Users\KullaniciAdi\Anaconda3\Lib\site-packages\lazypredict\Supervised.py`.
+
+2. `Supervised.py` Dosyasını Düzenleme
+
+Bulduğunuz dosya yolunu bir dosya gezgini ile açarak, `Supervised.py` dosyasını düzenlemeniz gerekiyor.
+
+1. Dosya Gezginini Açın:
+   - Dosya yolunu kopyalayın ve Windows Gezgini veya başka bir dosya yöneticisine yapıştırın.
+
+2. `Supervised.py` Dosyasını Düzenleyin:
+   - `Supervised.py` dosyasını bir metin düzenleyici (örneğin, Notepad veya Visual Studio Code) ile açın.
+   - Aşağıdaki kod satırını bulun:
+
+     ("encoding", OneHotEncoder(handle_unknown="ignore", sparse=False)),
+     
+   - Bu satırı şu şekilde değiştirin:
+
+     ("encoding", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
+    
+
+3. Dosyayı kaydedip kapatın.
+   - Değişiklikleri kaydettikten sonra dosyayı kapatabilirsiniz.
